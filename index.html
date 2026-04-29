@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kutib Xona Tizimi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-light">
+  <div id="loader" class="loader-screen">
+    <div class="loader-orb"></div>
+    <p>Tizim yuklanmoqda...</p>
+  </div>
+
+  <div class="bg-orbs" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <header class="topbar glass">
+    <div class="brand">
+      <h1>Kutib Xona Tizimi</h1>
+      <p>Raqamli navbat boshqaruvi</p>
+    </div>
+    <div class="topbar-actions">
+      <button id="modeToggle" class="btn ghost" type="button">🌙 Rejim</button>
+      <a class="btn primary" href="admin.html">Admin Panel</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="welcome card-3d glass">
+      <div>
+        <h2>Kutib Xonaga Xush Kelibsiz</h2>
+        <p>
+          Navbatingiz holatini real vaqtga yaqin tarzda kuzating. Tizim
+          avtomatik yangilanadi va saqlanadi.
+        </p>
+      </div>
+      <button id="takeQueueBtn" class="btn primary large" type="button">
+        Navbat olish
+      </button>
+    </section>
+
+    <section class="grid">
+      <article class="card-3d glass stat-card">
+        <h3>Sizning navbatingiz</h3>
+        <p id="myNumber" class="big-number">-</p>
+        <p id="myStatusBadge" class="status-pill status-waiting">Kutmoqda</p>
+      </article>
+
+      <article class="card-3d glass current-client">
+        <h3>Joriy mijoz</h3>
+        <div id="currentClientCard" class="client-card">
+          <p class="client-number">#-</p>
+          <p class="client-status">Faol navbat yo'q</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="card-3d glass">
+      <div class="section-title">
+        <h3>Jonli navbat ro'yxati</h3>
+        <span id="queueCount" class="chip">0 ta</span>
+      </div>
+      <ul id="queueList" class="queue-list"></ul>
+    </section>
+  </main>
+
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

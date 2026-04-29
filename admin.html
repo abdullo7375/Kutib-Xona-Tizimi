@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel | Kutib Xona</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-light">
+  <div id="loader" class="loader-screen">
+    <div class="loader-orb"></div>
+    <p>Admin panel yuklanmoqda...</p>
+  </div>
+
+  <div class="bg-orbs" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <header class="topbar glass">
+    <div class="brand">
+      <h1>Admin Panel</h1>
+      <p>Navbat boshqaruv markazi</p>
+    </div>
+    <div class="topbar-actions">
+      <button id="modeToggle" class="btn ghost" type="button">🌙 Rejim</button>
+      <a class="btn ghost" href="index.html">Foydalanuvchi sahifasi</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="loginSection" class="card-3d glass auth-card">
+      <h2>Tizimga kirish</h2>
+      <p>Admin boshqaruvi uchun login qiling.</p>
+      <form id="loginForm" class="form-grid">
+        <label>
+          Login
+          <input id="adminUser" type="text" placeholder="admin" required />
+        </label>
+        <label>
+          Parol
+          <input id="adminPass" type="password" placeholder="1234" required />
+        </label>
+        <button class="btn primary" type="submit">Kirish</button>
+      </form>
+      <p class="hint">Demo: login `admin`, parol `1234`</p>
+    </section>
+
+    <section id="dashboardSection" class="hidden">
+      <div class="grid">
+        <article class="card-3d glass">
+          <h3>Yangi mijoz qo'shish</h3>
+          <form id="addClientForm" class="form-inline">
+            <input id="clientNameInput" type="text" placeholder="Mijoz ismi (ixtiyoriy)" />
+            <button class="btn primary" type="submit">Qo'shish</button>
+          </form>
+        </article>
+
+        <article class="card-3d glass">
+          <h3>Statistika</h3>
+          <div class="stats-row">
+            <div>
+              <p>Jami navbat</p>
+              <strong id="totalCount">0</strong>
+            </div>
+            <div>
+              <p>Faol</p>
+              <strong id="activeCount">0</strong>
+            </div>
+            <div>
+              <p>Tugagan</p>
+              <strong id="doneCount">0</strong>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <section class="card-3d glass table-wrap">
+        <div class="section-title">
+          <h3>To'liq navbat ro'yxati</h3>
+          <button id="logoutBtn" class="btn danger" type="button">Chiqish</button>
+        </div>
+        <div class="table-scroll">
+          <table class="queue-table">
+            <thead>
+              <tr>
+                <th>Navbat</th>
+                <th>Ism</th>
+                <th>Holat</th>
+                <th>Vaqt</th>
+                <th>Amallar</th>
+              </tr>
+            </thead>
+            <tbody id="adminQueueBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
